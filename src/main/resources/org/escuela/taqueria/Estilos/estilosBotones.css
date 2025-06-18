@@ -1,0 +1,17 @@
+#botones-generales{
+
+    -fx-background-color: #0d6efd;  /* Azul estilo Bootstrap 5 */
+    -fx-text-fill: white;           /* Texto blanco */
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16;
+}
+
+#botones-generales:hover {
+    -fx-background-color: #0b5ed7;
+}
+
+#botones-generales:pressed {
+    -fx-background-color: #0a58ca;
+}

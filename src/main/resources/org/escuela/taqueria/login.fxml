@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="416.0" prefWidth="393.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.escuela.taqueria.Controlador.loginControlador">
+   <children>
+      <AnchorPane id="loginDerecho" prefHeight="416.0" prefWidth="416.0" stylesheets="@Estilos/estilos-Login-Derecha.css">
+         <children>
+            <Label layoutX="104.0" layoutY="46.0" text="El Buen Pastor" textFill="#edb232">
+               <font>
+                  <Font name="Arial Bold" size="29.0" />
+               </font>
+            </Label>
+            <Label layoutX="82.0" layoutY="168.0" text="USUARIO" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="206.0" text="CONTRASEÑA" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="160.0" layoutY="104.0" text="INGRESA" textFill="#edb232">
+               <font>
+                  <Font name="Arial" size="21.0" />
+               </font>
+            </Label>
+            <Button id="botones-generales" fx:id="btnIngresarLogin" layoutX="162.0" layoutY="284.0" mnemonicParsing="false" onAction="#IngresarUsuario" stylesheets="@Estilos/estilosBotones.css" text="INGRESAR" />
+            <PasswordField id="txtGenerales" fx:id="txtContraseniaLogin" layoutX="190.0" layoutY="206.0" prefHeight="26.0" prefWidth="182.0" stylesheets="@Estilos/estilosTxt.css" />
+            <TextField id="txtGenerales" fx:id="txtUsuario" layoutX="190.0" layoutY="168.0" prefHeight="26.0" prefWidth="182.0" stylesheets="@Estilos/estilosTxt.css" />
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

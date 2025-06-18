@@ -1,0 +1,14 @@
+#txtGenerales{
+    -fx-border-color: rgba(0, 0, 0, 0.14);
+    -fx-background-color: white;
+
+    -fx-border-width: 2;
+
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+
+    -fx-effect: null;
+
+    -fx-font-size: 14px;
+    -fx-font-family: Arial;
+}
