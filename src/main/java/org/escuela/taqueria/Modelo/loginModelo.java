@@ -25,23 +25,27 @@ public class loginModelo {
     private LocalDate horaSalida;
     private Boolean usuarioActivo;
     private LocalDate fechaCreacion;
+    private String tipoUsuario;
 
 
     public String getNombreUsuario() {
         return nombreUsuario;
     }
 
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
-    }
 
     public String getContrasenia() {
         return contrasenia;
     }
 
-    public void setContrasenia(String contrasenia) {
-        this.contrasenia = contrasenia;
+    public String getTipoUsuario() {
+        return tipoUsuario;
     }
+
+    //añl
+
+
+
+
 
     public loginModelo(String nombre, String apellido, String direccion, LocalDate fechaNacimiento, String email, String telefono, String contrasenia, String nombreUsuario, LocalDate horaEntrada, LocalDate horaSalida) {
         this.nombre = nombre;
@@ -56,15 +60,16 @@ public class loginModelo {
         this.horaSalida = horaSalida;
     }
 
-    public loginModelo(String nombreUsuario, String contrasenia){
+    public loginModelo(String nombreUsuario, String contrasenia, String tipoUsuario){
         this.nombreUsuario = nombreUsuario;
         this.contrasenia = contrasenia;
+        this.tipoUsuario = tipoUsuario;
     }
 
 
 
     public static List<loginModelo> ListarUsuarios(){
-        String sql = "SELECT nombre_usuario, contrasenia FROM USUARIO;";
+        String sql = "SELECT nombre_usuario, contrasenia, tipo_usuario FROM USUARIO;";
         List<loginModelo> listaUsuarios = new ArrayList<>();
 
         try (Connection con = JDBCUtil.getConnection();
@@ -73,7 +78,8 @@ public class loginModelo {
                 while (rs.next()){
                     listaUsuarios.add(new loginModelo(
                             rs.getString("nombre_usuario"),
-                            rs.getString("contrasenia")));
+                            rs.getString("contrasenia"),
+                            rs.getString("tipo_usuario")));
                 }
         }
         catch (Exception e){
