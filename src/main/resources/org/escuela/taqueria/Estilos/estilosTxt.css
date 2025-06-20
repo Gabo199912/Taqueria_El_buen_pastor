@@ -12,3 +12,14 @@
     -fx-font-size: 14px;
     -fx-font-family: Arial;
 }
+
+
+#text-area {
+    -fx-background-color: transparent;   /* Hace que el fondo sea transparente */
+    -fx-border-color: transparent;       /* Elimina los bordes */
+    -fx-text-fill: black;                 /* Ajusta el color del texto (puedes cambiarlo) */
+    -fx-font-size: 14px;                  /* Tamaño de fuente similar al Label */
+    -fx-font-family: "Arial";  /* Fuente similar a la del Label */
+    -fx-padding: 0;                       /* Quita el padding para que el texto se vea como en un Label */
+    -fx-background-insets: 0;             /* Elimina los posibles márgenes del fondo */
+}

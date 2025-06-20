@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.escuela.taqueria.Controlador.administradorControlador;
+import org.escuela.taqueria.Controlador.vendedorControlador;
 import org.escuela.taqueria.InicioAplicacion;
 import org.escuela.taqueria.JDBCUtil;
 
@@ -103,14 +104,20 @@ public class loginModelo {
             AnchorPane root = fxmlLoader.load();
 
 
-
-            administradorControlador controlador = fxmlLoader.getController();
-
-           controlador.setUsuario(usuario);
-
+        //lñaskdjlñkasdj
+            // Verificar el tipo de controlador antes de hacer el cast
+            if (archivoFXML.equals("administrador.fxml")) {
+                administradorControlador controlador = fxmlLoader.getController();
+                controlador.setUsuario(usuario);
+            } else if (archivoFXML.equals("vendedor.fxml")) {
+                vendedorControlador vendedor = fxmlLoader.getController();
+                vendedor.setUsuario(usuario);
+            } else {
+                throw new IllegalArgumentException("No se encontró un controlador para el archivo FXML: " + archivoFXML);
+            }
             Scene scene = new Scene(root);
             Stage stage = new Stage();
-            stage.setTitle("ADMINISTRADOR");
+            stage.setTitle("SISTEMA GENERAL");
             stage.setScene(scene);
             stage.show();
 

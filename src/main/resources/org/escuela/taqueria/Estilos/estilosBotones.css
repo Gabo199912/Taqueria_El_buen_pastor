@@ -15,3 +15,33 @@
 #botones-generales:pressed {
     -fx-background-color: #0a58ca;
 }
+
+.split-menu-button {
+
+    -fx-text-fill: white;                /* Color del texto */
+    -fx-font-size: 14px;                 /* Tamaño de la fuente */
+    -fx-font-family: "Arial"; /* Fuente similar a la de los botones comunes */
+    -fx-background-radius: 5px;          /* Borde redondeado */
+    -fx-border-color: transparent;      /* Elimina el borde */
+    -fx-border-radius: 5px;              /* Borde redondeado */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 1); /* Sombra sutil */
+}
+
+/* Estilo cuando el SplitMenuButton está en estado hover (cuando se pasa el mouse) */
+.split-menu-button:hover {
+    -fx-text-fill: white;                /* Mantener el color del texto */
+}
+
+/* Estilo para la flecha del SplitMenuButton */
+.split-menu-button .arrow {
+    -fx-background-color: black;         /* Color de fondo de la flecha */
+    -fx-shape: "M 0 0 L 0 6 L 5 3 Z";    /* Forma triangular de la flecha */
+}
+
+/* Estilo para el menú desplegable */
+.split-menu-button .menu {
+    -fx-background-color: #FFFFFF;       /* Color de fondo del menú */
+    -fx-border-color: #CCCCCC;           /* Color del borde del menú */
+    -fx-border-radius: 5px;              /* Borde redondeado del menú */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0.5, 0, 0); /* Sombra sutil */
+}

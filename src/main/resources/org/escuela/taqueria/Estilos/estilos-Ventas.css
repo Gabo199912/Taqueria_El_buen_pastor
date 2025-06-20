@@ -1,0 +1,55 @@
+/* Estilo básico para AnchorPane */
+.anchor-pane {
+    -fx-background-color: #d1d5d8; /* Color de fondo */
+    -fx-background-radius: 10; /* Bordes redondeados */
+    -fx-border-color: #d1d5d8; /* Color del borde */
+    -fx-border-width: 2; /* Ancho del borde */
+    -fx-border-radius: 10; /* Bordes redondeados también en el borde */
+    -fx-padding: 10; /* Espaciado interno */
+    -fx-opacity: 0.95; /* Opacidad */
+}
+
+
+
+
+.SubPane {
+    -fx-background-radius: 15; /* Bordes redondeados */
+    -fx-background-color: #fcfcfc;
+    -fx-border-color: black; /* Color del borde */
+    -fx-border-width: 0.5; /* Ancho del borde */
+    -fx-border-radius: 15; /* Bordes redondeados también en el borde */
+}
+
+.image-view {
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-border-color: black;
+    -fx-border-width: 0.5;
+}
+
+
+
+.scroll-pane {
+    -fx-background-radius: 15; /* Bordes redondeados */
+    -fx-background-color: #fcfcfc;
+
+    -fx-background-insets: 0; /* Esto elimina cualquier margen extra */
+    -fx-border-radius: 15; /* Bordes redondeados también en el borde */
+    -fx-border-color: black; /* Color del borde */
+    -fx-border-width: 0.5; /* Ancho del borde */
+}
+
+.scroll-bar {
+    -fx-background-color: transparent; /* Fondo transparente para la barra */
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #A9A9A9; /* Color del "pulgar" de la barra */
+    -fx-background-radius: 7; /* Bordes redondeados */
+    -fx-border-radius: 15;
+
+}
+

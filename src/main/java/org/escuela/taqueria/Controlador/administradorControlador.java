@@ -136,7 +136,7 @@ public class administradorControlador {
 
 
         if (lblNombreUsuario != null){
-            lblNombreUsuario.setText("Bienbenido! " + usuario.getNombreUsuario());
+            lblNombreUsuario.setText("Bienvenido! " + usuario.getNombreUsuario().toUpperCase());
         }else {
             System.out.println("lblNombreUsuario es null");
         }
