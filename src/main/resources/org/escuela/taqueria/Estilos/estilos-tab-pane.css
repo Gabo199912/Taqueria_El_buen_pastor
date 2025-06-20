@@ -1,0 +1,43 @@
+
+.tab-pane {
+    -fx-background-color: #f5f5f5;
+    -fx-text-color: #2c3e50;
+    -fx-tab-min-width: 100px;
+    -fx-tab-max-width: 200px;
+    -fx-tab-min-height: 30px;
+    -fx-tab-max-height: 30px;
+    -fx-border-color: #ccc;
+}
+
+.tab-pane .tab-header-area {
+    -fx-background-color: #2c3e50;
+}
+
+.tab-pane .tab {
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 5 10 5 10;
+}
+
+.tab-pane .tab-label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #3498db;
+}
+
+.tab-pane .tab:hover {
+    -fx-background-color: #2980b9;
+}
+
+.tab-pane .tab-label {
+    -fx-text-fill: #444; /* Color oscuro para mejor visibilidad */
+    -fx-font-weight: bold;
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: white; /* Blanco para la pestaña activa */
+}

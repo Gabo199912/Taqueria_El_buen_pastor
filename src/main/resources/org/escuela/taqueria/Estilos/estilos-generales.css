@@ -1,0 +1,82 @@
+/* Estilo para TextField */
+.text-field {
+    -fx-background-color: #f4f4f4;  /* Fondo gris claro */
+    -fx-border-color: #ccc;        /* Borde gris */
+    -fx-border-width: 2px;         /* Grosor del borde */
+    -fx-border-radius: 5px;        /* Bordes redondeados */
+    -fx-padding: 10px;             /* Espaciado interno */
+    -fx-font-size: 12px;           /* Tamaño de la fuente */
+    -fx-text-fill: #333;           /* Color del texto */
+    -fx-background-insets: 0, 1, 2, 3;  /* Opcional, para dar más profundidad */
+}
+
+/* Estilo para TextField cuando tiene el foco */
+.text-field:focused {
+    -fx-border-color: #4a90e2;  /* Color de borde al hacer foco */
+    -fx-background-color: #e0f3ff;  /* Fondo claro cuando tiene foco */
+}
+
+/* Estilo para Label */
+.label {
+    -fx-font-size: 16px;           /* Tamaño de la fuente */
+    -fx-font-weight: bold;         /* Fuente en negrita */
+    -fx-text-fill: #333;           /* Color del texto */
+    -fx-background-color: transparent;  /* Fondo transparente */
+    -fx-padding: 5px 10px;         /* Espaciado interno */
+}
+
+/* Estilo para Label con un color de fondo */
+.label.custom-label {
+    -fx-background-color: #4a90e2;  /* Fondo azul */
+    -fx-text-fill: white;            /* Texto blanco */
+    -fx-font-size: 16px;             /* Tamaño de la fuente */
+    -fx-padding: 10px 15px;          /* Espaciado interno */
+    -fx-border-radius: 5px;         /* Bordes redondeados */
+}
+
+
+/* Estilo para DatePicker */
+.date-picker {
+    -fx-background-color: #f4f4f4;  /* Fondo gris claro */
+    -fx-border-color: #ccc;        /* Borde gris */
+    -fx-border-radius: 5px;        /* Bordes redondeados */
+    -fx-font-size: 14px;           /* Tamaño de la fuente */
+    -fx-text-fill: #333;           /* Color del texto */
+    -fx-background-insets: 0, 1, 2, 3;  /* Opcional, para dar más profundidad */
+}
+
+/* Estilo para DatePicker cuando tiene el foco */
+.date-picker:focused {
+    -fx-border-color: #4a90e2;     /* Color de borde al hacer foco */
+    -fx-background-color: #e0f3ff;  /* Fondo claro cuando tiene foco */
+}
+
+/* Estilo para el botón de calendario dentro del DatePicker */
+.date-picker .arrow-button {
+    -fx-background-color: #4a90e2;   /* Fondo azul para el botón */
+    -fx-border-radius: 50%;          /* Bordes redondeados */
+    -fx-padding: 5px;                /* Espaciado interno */
+    -fx-font-size: 12px;             /* Tamaño de la fuente */
+    -fx-text-fill: white;            /* Color del texto */
+    -fx-border-color: #4a90e2;       /* Borde azul */
+}
+
+/* Estilo para el DatePicker desplegado (al seleccionar una fecha) */
+.date-picker .popup {
+    -fx-background-color: #ffffff;   /* Fondo blanco */
+    -fx-border-color: #ccc;         /* Borde gris */
+    -fx-border-width: 1px;          /* Grosor del borde */
+    -fx-border-radius: 5px;         /* Bordes redondeados */
+}
+
+/* Estilo para los días en el calendario del DatePicker */
+.date-picker .calendar-pane .day-cell {
+    -fx-text-fill: #333;             /* Color del texto */
+    -fx-background-color: #f4f4f4;   /* Fondo gris claro para las celdas */
+}
+
+/* Estilo para los días seleccionados */
+.date-picker .calendar-pane .day-cell.selected {
+    -fx-background-color: #4a90e2;   /* Fondo azul para los días seleccionados */
+    -fx-text-fill: white;            /* Texto blanco */
+}

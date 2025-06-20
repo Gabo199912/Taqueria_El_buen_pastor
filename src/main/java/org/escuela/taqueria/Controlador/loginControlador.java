@@ -3,6 +3,7 @@ package org.escuela.taqueria.Controlador;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -16,7 +17,34 @@ import java.awt.*;
 import java.util.List;
 
 public class loginControlador {
+    private String nombreUsuario;
+    private String contrasenia;
 
+    private loginModelo usuario;
+
+    public loginModelo getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(loginModelo usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+    public String getContrasenia() {
+        return contrasenia;
+    }
+
+    public void setContrasenia(String getContrasenia) {
+        this.contrasenia = getContrasenia;
+    }
 
     @FXML
     private TextField txtUsuario;
@@ -25,66 +53,37 @@ public class loginControlador {
     private PasswordField txtContraseniaLogin;
 
 
+
+
+
     public void IngresarUsuario(){
-        String nombreUsuario = txtUsuario.getText();
-        String contrasenia = txtContraseniaLogin.getText();
-        Boolean validar = true;
+
+        setNombreUsuario(txtUsuario.getText());
+        setContrasenia(txtContraseniaLogin.getText());
 
         List<loginModelo> listaUsuario = loginModelo.ListarUsuarios();
+
 
 
         for(loginModelo usuario : listaUsuario){
             if (usuario.getNombreUsuario().equals(nombreUsuario)){
                 if (usuario.getContrasenia().equals(contrasenia)){
-                    switch (usuario.getTipoUsuario()){
-                        case "administrador":
-                            try {
-                                FXMLLoader fxmlLoader = new FXMLLoader(InicioAplicacion.class.getResource("administrador.fxml"));
-                                AnchorPane root = fxmlLoader.load();
-
-                                Scene scene = new Scene(root);
-                                Stage stage = new Stage();
-                                stage.setTitle("ADMINISTRADOR");
-                                stage.setScene(scene);
-                                stage.show();
-
-                                JOptionPane.showMessageDialog(null, "Bienvenido " + usuario.getNombreUsuario());
-                            } catch (Exception e) {
-                                JOptionPane.showMessageDialog(null, "Error al cargar el archivo: " + e.getMessage());
-                            }
-                            break;
-
-                        case "vendedor":
-                            try {
-                                FXMLLoader fxmlLoader = new FXMLLoader(InicioAplicacion.class.getResource("vendedor.fxml"));
-                                AnchorPane root = fxmlLoader.load();
-
-                                Scene scene = new Scene(root);
-                                Stage stage = new Stage();
-                                stage.setTitle("VENDEDOR");
-                                stage.setScene(scene);
-                                stage.show();
-
-                                JOptionPane.showMessageDialog(null, "Bienvenido " + usuario.getNombreUsuario());
-                            } catch (Exception e) {
-                                JOptionPane.showMessageDialog(null, "Error al cargar el archivo: " + e.getMessage());
-                            }
-                            break;
+                    loginModelo.seleccionarVentana(usuario);
+                    JOptionPane.showMessageDialog(null, "Bienvenido " + usuario.getNombreUsuario());
 
 
-
-                    }
+                    Stage stage = (Stage) txtUsuario.getScene().getWindow();
+                    stage.close();
+                    break;
 
                 }else {
                     JOptionPane.showMessageDialog(null, "Contraseña incorrecta");
-                    validar = false;
+                    break;
                 }
             }
         }
 
-        if (validar == false){
-            JOptionPane.showMessageDialog(null, "Usuario no encontrado");
-        }
+
     }
 
 

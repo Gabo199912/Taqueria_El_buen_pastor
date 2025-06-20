@@ -11,6 +11,7 @@ module org.escuela.taqueria {
     requires eu.hansolo.tilesfx;
     requires java.sql;
     requires java.desktop;
+    requires mysql.connector.j;
 
     opens org.escuela.taqueria.Controlador to javafx.fxml;
     opens org.escuela.taqueria.Modelo to javafx.base;

@@ -1,8 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="469.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.escuela.taqueria.Controlador.administradorControlador">
-
+<AnchorPane prefHeight="571.0" prefWidth="982.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.escuela.taqueria.Controlador.administradorControlador">
+   <children>
+      <AnchorPane prefHeight="115.0" prefWidth="982.0" style="-fx-background-color: #2c2c76;">
+         <children>
+            <Label fx:id="lblNombreUsuario" layoutX="34.0" layoutY="39.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="697.0" layoutY="32.0" prefHeight="52.0" prefWidth="220.0" text="ADMINISTRADOR" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TabPane layoutX="14.0" layoutY="125.0" prefHeight="422.0" prefWidth="959.0" stylesheets="@Estilos/estilos-tab-pane.css" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="CREAR USUARIO">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tblAdministrador" layoutX="540.0" layoutY="14.0" prefHeight="351.0" prefWidth="410.0" stylesheets="@Estilos/estilos-tabla.css">
+                          <columns>
+                            <TableColumn fx:id="ColumnaIdUsuario" prefWidth="56.0" text="ID" />
+                            <TableColumn fx:id="ColumnaNombreUsuario" prefWidth="134.800048828125" text="NOMBRE" />
+                              <TableColumn fx:id="ColumnaTipoUsuario" prefWidth="112.20001220703125" text="TIPO USUARIO" />
+                              <TableColumn fx:id="ColumnaTelefonoUsuario" prefWidth="96.2000732421875" text="TELEFONO" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="11.0" layoutY="12.0" stylesheets="@Estilos/estilos-generales.css" text="NOMBRE">
+                           <font>
+                              <Font name="Arial Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtNombreUsuario" layoutX="94.0" layoutY="8.0" prefHeight="26.0" prefWidth="168.0" stylesheets="@Estilos/estilos-generales.css">
+                           <font>
+                              <Font size="15.0" />
+                           </font></TextField>
+                        <Label layoutX="273.0" layoutY="12.0" stylesheets="@Estilos/estilos-generales.css" text="APELLIDO">
+                           <font>
+                              <Font name="Arial Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtApellidoUsuario" layoutX="362.0" layoutY="9.0" prefHeight="26.0" prefWidth="168.0" stylesheets="@Estilos/estilos-generales.css">
+                           <font>
+                              <Font size="15.0" />
+                           </font></TextField>
+                        <Label layoutX="9.0" layoutY="102.0" stylesheets="@Estilos/estilos-generales.css" text="DIRECCION">
+                           <font>
+                              <Font name="Arial Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtDireccionUsuario" layoutX="112.0" layoutY="98.0" prefHeight="26.0" prefWidth="418.0" stylesheets="@Estilos/estilos-generales.css">
+                           <font>
+                              <Font size="15.0" />
+                           </font></TextField>
+                        <Label layoutX="11.0" layoutY="56.0" stylesheets="@Estilos/estilos-generales.css" text="CORREO">
+                           <font>
+                              <Font name="Arial Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCorreoUsuario" layoutX="94.0" layoutY="53.0" prefHeight="26.0" prefWidth="168.0" stylesheets="@Estilos/estilos-generales.css">
+                           <font>
+                              <Font size="15.0" />
+                           </font></TextField>
+                        <Label layoutX="270.0" layoutY="56.0" stylesheets="@Estilos/estilos-generales.css" text="TELEFONO">
+                           <font>
+                              <Font name="Arial Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtTelefonoUsuario" layoutX="362.0" layoutY="53.0" prefHeight="26.0" prefWidth="167.0" stylesheets="@Estilos/estilos-generales.css">
+                           <font>
+                              <Font size="15.0" />
+                           </font></TextField>
+                        <Label layoutX="397.0" layoutY="140.0" stylesheets="@Estilos/estilos-generales.css" text="CONTRASEÑA">
+                           <font>
+                              <Font name="Arial Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtContraseniaUsuario" layoutX="384.0" layoutY="169.0" prefHeight="26.0" prefWidth="150.0" stylesheets="@Estilos/estilos-generales.css">
+                           <font>
+                              <Font size="15.0" />
+                           </font></TextField>
+                        <Label layoutX="6.0" layoutY="141.0" stylesheets="@Estilos/estilos-generales.css" text="NOMBRE DEL USUARIO">
+                           <font>
+                              <Font name="Arial Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtUsuario" layoutX="18.0" layoutY="169.0" prefHeight="26.0" prefWidth="173.0" stylesheets="@Estilos/estilos-generales.css">
+                           <font>
+                              <Font size="15.0" />
+                           </font></TextField>
+                        <Label layoutX="39.0" layoutY="205.0" stylesheets="@Estilos/estilos-generales.css" text="FECHA NACIMIENTO">
+                           <font>
+                              <Font name="Arial Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="FechaNacimientoUsuario" layoutX="41.0" layoutY="237.0" stylesheets="@Estilos/estilos-generales.css" />
+                        <Button id="botones-generales" fx:id="btnUsuario" layoutX="361.0" layoutY="293.0" mnemonicParsing="false" onAction="#crearNuevoUsuario" prefHeight="38.0" prefWidth="127.0" stylesheets="@Estilos/estilosBotones.css" text="CREAR USUARIO" />
+                        <ComboBox fx:id="comboUsuarios" layoutX="220.0" layoutY="177.0" prefWidth="150.0" />
+                        <Label layoutX="216.0" layoutY="140.0" stylesheets="@Estilos/estilos-generales.css" text="TIPO DE USUARIO">
+                           <font>
+                              <Font name="Arial Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button id="botones-generales" fx:id="btnLimpiar" layoutX="206.0" layoutY="293.0" mnemonicParsing="false" onAction="#limpiarDatos" prefHeight="38.0" prefWidth="109.0" stylesheets="@Estilos/estilosBotones.css" text="LIMPIAR" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="ELIMINAR USUARIOS">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tablaEliminacion" layoutX="14.0" layoutY="14.0" prefHeight="234.0" prefWidth="932.0" stylesheets="@Estilos/estilos-tabla.css">
+                          <columns>
+                            <TableColumn fx:id="idEliminarUsuario" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="nombreEliminarUsuario" prefWidth="97.199951171875" text="NOMBRE" />
+                              <TableColumn fx:id="apellidoEliminarUsuario" prefWidth="88.20002746582031" text="APELLIDO" />
+                              <TableColumn fx:id="direccionEliminarUsuario" prefWidth="276.5999755859375" text="DIRECCION" />
+                              <TableColumn fx:id="emailEliminarUsuario" prefWidth="95.199951171875" text="EMAIL" />
+                              <TableColumn fx:id="telefonoEliminarUsuario" prefWidth="87.0" text="TELEFONO" />
+                              <TableColumn fx:id="contraseniaEliminarUsuario" prefWidth="112.79998779296875" text="CONTRASEÑA" />
+                              <TableColumn fx:id="tipoUsuarioEliminar" prefWidth="90.39990234375" text="USUARIO" />
+                          </columns>
+                        </TableView>
+                        <Button id="botones-generales" fx:id="btnEliminar" layoutX="183.0" layoutY="280.0" mnemonicParsing="false" onAction="#eliminarUsuario" prefHeight="44.0" prefWidth="113.0" stylesheets="@Estilos/estilosBotones.css" text="ELIMINAR">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Button>
+                        <TextField fx:id="txtidUsuarioEliminar" layoutX="309.0" layoutY="281.0" stylesheets="@Estilos/estilos-generales.css">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+           <Tab text="ESTADISTICAS">
+              <content>
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+           </Tab>
+        </tabs>
+      </TabPane>
+   </children>
 </AnchorPane>

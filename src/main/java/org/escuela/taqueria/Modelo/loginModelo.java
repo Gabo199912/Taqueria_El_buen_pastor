@@ -1,12 +1,19 @@
 package org.escuela.taqueria.Modelo;
 
-import javafx.scene.web.WebHistory;
+
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import org.escuela.taqueria.Controlador.administradorControlador;
+import org.escuela.taqueria.InicioAplicacion;
 import org.escuela.taqueria.JDBCUtil;
 
 import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +35,10 @@ public class loginModelo {
     private String tipoUsuario;
 
 
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
     public String getNombreUsuario() {
         return nombreUsuario;
     }
@@ -41,24 +52,8 @@ public class loginModelo {
         return tipoUsuario;
     }
 
-    //añl
 
 
-
-
-
-    public loginModelo(String nombre, String apellido, String direccion, LocalDate fechaNacimiento, String email, String telefono, String contrasenia, String nombreUsuario, LocalDate horaEntrada, LocalDate horaSalida) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.direccion = direccion;
-        this.fechaNacimiento = fechaNacimiento;
-        this.email = email;
-        this.telefono = telefono;
-        this.contrasenia = contrasenia;
-        this.nombreUsuario = nombreUsuario;
-        this.horaEntrada = horaEntrada;
-        this.horaSalida = horaSalida;
-    }
 
     public loginModelo(String nombreUsuario, String contrasenia, String tipoUsuario){
         this.nombreUsuario = nombreUsuario;
@@ -83,9 +78,47 @@ public class loginModelo {
                 }
         }
         catch (Exception e){
-            JOptionPane.showMessageDialog(null, "Error al consultar los datos del usuario: " + e.getMessage());
+            throw new RuntimeException("Error al consultar los datos del usuario: " + e.getMessage());
         }
         return listaUsuarios;
+    }
+
+    public static void seleccionarVentana(loginModelo usuario){
+
+        try {
+            FXMLLoader fxmlLoader;
+            String archivoFXML = "";
+            switch (usuario.getTipoUsuario()){
+                case "administrador":
+                    archivoFXML = "administrador.fxml";
+                    break;
+                case "vendedor":
+                    archivoFXML = "vendedor.fxml";
+                    break;
+
+                    default:
+                    throw new IllegalArgumentException("tipo de usuario no valido" + usuario.getTipoUsuario());
+            }
+            fxmlLoader = new FXMLLoader(InicioAplicacion.class.getResource(archivoFXML));
+            AnchorPane root = fxmlLoader.load();
+
+
+
+            administradorControlador controlador = fxmlLoader.getController();
+
+           controlador.setUsuario(usuario);
+
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setTitle("ADMINISTRADOR");
+            stage.setScene(scene);
+            stage.show();
+
+
+
+        }catch (Exception e){
+            throw new RuntimeException("Error al cargar el archivo: " + e.getMessage());
+        }
     }
 
 

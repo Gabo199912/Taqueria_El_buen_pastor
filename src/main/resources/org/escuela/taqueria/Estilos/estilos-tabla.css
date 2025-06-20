@@ -1,0 +1,48 @@
+/* Estilo base del TableView */
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 6px;
+    -fx-table-cell-border-color: #e0e0e0;
+}
+
+/* Encabezado de columnas */
+.table-view .column-header-background {
+    -fx-background-color: #007acc;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.table-view .column-header :hover {
+    -fx-background-color: #007acc;
+}
+
+
+/* Texto de las celdas */
+.table-view .cell {
+    -fx-text-fill: #2c2c2c;
+    -fx-font-size: 12px;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* Fila seleccionada */
+.table-row-cell:selected {
+    -fx-background-color: #cce6ff;
+}
+
+/* Hover sobre fila */
+.table-row-cell:hover {
+    -fx-background-color: #e8f4ff;
+}
+
+/* Mensaje cuando no hay contenido */
+.table-view .placeholder .label {
+    -fx-text-fill: #666666;
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+}
+
