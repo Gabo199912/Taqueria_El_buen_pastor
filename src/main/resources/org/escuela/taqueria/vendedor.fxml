@@ -5,12 +5,20 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="938.0" styleClass="anchor-pane" stylesheets="@Estilos/estilos-Ventas.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.escuela.taqueria.Controlador.vendedorControlador">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="938.0" styleClass="anchor-pane" stylesheets="@Estilos/estilos-Ventas.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.escuela.taqueria.Controlador.ventaControlador">
    <children>
       <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="78.0" prefWidth="637.0" styleClass="SubPane" stylesheets="@Estilos/estilos-Ventas.css">
          <children>
             <Label fx:id="lblNombreUsuarioVendedor" layoutX="14.0" prefHeight="38.0" prefWidth="277.0" stylesheets="@Estilos/estilos-generales.css" text="Label" />
-            <Label fx:id="lblTotal" layoutX="533.0" layoutY="11.0" stylesheets="@Estilos/estilos-generales.css" text="Label" />
+            <Label fx:id="lblTotal" layoutX="491.0" layoutY="11.0" text="0">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font></Label>
+            <Label layoutX="496.0" layoutY="49.0" prefHeight="18.0" prefWidth="60.0" text="TOTAL">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
       <AnchorPane layoutX="665.0" layoutY="14.0" prefHeight="78.0" prefWidth="258.0" styleClass="SubPane" stylesheets="@Estilos/estilos-Ventas.css">
          <children>
@@ -18,7 +26,7 @@
          </children></AnchorPane>
       <AnchorPane layoutX="14.0" layoutY="100.0" prefHeight="404.0" prefWidth="638.0" style="-fx-border-radius: 15; -fx-background-radius: 15;" styleClass="SubPane" stylesheets="@Estilos/estilos-Ventas.css">
          <children>
-            <ScrollPane prefHeight="404.0" prefWidth="638.0" styleClass="scroll-bar" stylesheets="@Estilos/estilos-Ventas.css">
+            <ScrollPane prefHeight="404.0" prefWidth="638.0" styleClass="scroll-bar" stylesheets="@Estilos/estilos-Ventas.css" vvalue="0.37">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1102.0" prefWidth="619.0" styleClass="SubPane">
                      <children>
@@ -43,8 +51,8 @@
                                     <Font name="Arial" size="15.0" />
                                  </font>
                               </Label>
-                              <Button id="botones-generales" layoutX="127.0" layoutY="226.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="88.0" stylesheets="@Estilos/estilosBotones.css" text="AGREGAR" />
-                              <TextField id="txtGenerales" layoutX="47.0" layoutY="230.0" prefHeight="26.0" prefWidth="66.0" stylesheets="@Estilos/estilos-Ventas.css" />
+                              <Button id="botones-generales" layoutX="127.0" layoutY="226.0" mnemonicParsing="false" onAction="#taco3UnidadesVentaProducto" prefHeight="34.0" prefWidth="88.0" stylesheets="@Estilos/estilosBotones.css" text="AGREGAR" />
+                              <TextField id="txtGenerales" fx:id="txtTaco3Unidades" layoutX="47.0" layoutY="230.0" prefHeight="26.0" prefWidth="66.0" stylesheets="@Estilos/estilos-Ventas.css" />
                               <Label layoutX="52.0" layoutY="260.0" text="cantidad">
                                  <font>
                                     <Font name="Arial" size="15.0" />
@@ -73,8 +81,8 @@
                                     <Font name="Arial" size="15.0" />
                                  </font>
                               </Label>
-                              <Button id="botones-generales" layoutX="125.0" layoutY="226.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="88.0" stylesheets="@Estilos/estilosBotones.css" text="AGREGAR" />
-                              <TextField id="txtGenerales" layoutX="45.0" layoutY="230.0" prefHeight="26.0" prefWidth="66.0" stylesheets="@Estilos/estilos-Ventas.css" />
+                              <Button id="botones-generales" layoutX="125.0" layoutY="226.0" mnemonicParsing="false" onAction="#taco4UnidadesVentaProducto" prefHeight="34.0" prefWidth="88.0" stylesheets="@Estilos/estilosBotones.css" text="AGREGAR" />
+                              <TextField id="txtGenerales" fx:id="txtTaco4Unidades" layoutX="45.0" layoutY="230.0" prefHeight="26.0" prefWidth="66.0" stylesheets="@Estilos/estilos-Ventas.css" />
                               <Label layoutX="50.0" layoutY="260.0" text="cantidad">
                                  <font>
                                     <Font name="Arial" size="15.0" />
@@ -104,8 +112,8 @@
                                     <Font name="Arial" size="15.0" />
                                  </font>
                               </Label>
-                              <Button id="botones-generales" layoutX="127.0" layoutY="226.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="88.0" stylesheets="@Estilos/estilosBotones.css" text="AGREGAR" />
-                              <TextField id="txtGenerales" layoutX="47.0" layoutY="230.0" prefHeight="26.0" prefWidth="66.0" stylesheets="@Estilos/estilosTxt.css" />
+                              <Button id="botones-generales" layoutX="127.0" layoutY="226.0" mnemonicParsing="false" onAction="#mixto3UnidadesVentaProducto" prefHeight="34.0" prefWidth="88.0" stylesheets="@Estilos/estilosBotones.css" text="AGREGAR" />
+                              <TextField id="txtGenerales" fx:id="txtMixto3Unidades" layoutX="47.0" layoutY="230.0" prefHeight="26.0" prefWidth="66.0" stylesheets="@Estilos/estilosTxt.css" />
                               <Label layoutX="52.0" layoutY="260.0" text="cantidad">
                                  <font>
                                     <Font name="Arial" size="15.0" />
@@ -135,8 +143,8 @@
                                     <Font name="Arial" size="15.0" />
                                  </font>
                               </Label>
-                              <Button id="botones-generales" layoutX="127.0" layoutY="226.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="88.0" stylesheets="@Estilos/estilosBotones.css" text="AGREGAR" />
-                              <TextField id="txtGenerales" layoutX="47.0" layoutY="230.0" prefHeight="26.0" prefWidth="66.0" stylesheets="@Estilos/estilosTxt.css" />
+                              <Button id="botones-generales" layoutX="127.0" layoutY="226.0" mnemonicParsing="false" onAction="#mixto4UnidadesVentaProducto" prefHeight="34.0" prefWidth="88.0" stylesheets="@Estilos/estilosBotones.css" text="AGREGAR" />
+                              <TextField id="txtGenerales" fx:id="txtMixto4Unidades" layoutX="47.0" layoutY="230.0" prefHeight="26.0" prefWidth="66.0" stylesheets="@Estilos/estilosTxt.css" />
                               <Label layoutX="52.0" layoutY="260.0" text="cantidad">
                                  <font>
                                     <Font name="Arial" size="15.0" />
@@ -150,19 +158,45 @@
          </children></AnchorPane>
       <AnchorPane layoutX="665.0" layoutY="102.0" prefHeight="404.0" prefWidth="258.0" styleClass="SubPane" stylesheets="@Estilos/estilos-Ventas.css">
          <children>
-            <TextField id="txtGenerales" layoutX="107.0" layoutY="36.0" prefHeight="26.0" prefWidth="124.0" stylesheets="@Estilos/estilosTxt.css" />
-            <Label layoutX="23.0" layoutY="40.0" prefHeight="18.0" prefWidth="70.0" text="TARJETA">
+            <TextField id="txtGenerales" fx:id="txtNombreVenta" layoutX="94.0" layoutY="45.0" prefHeight="30.0" prefWidth="154.0" stylesheets="@Estilos/estilosTxt.css" />
+            <Label layoutX="10.0" layoutY="50.0" prefHeight="18.0" prefWidth="70.0" text="NOMBRE">
                <font>
                   <Font name="Arial Bold" size="15.0" />
                </font>
             </Label>
-            <TextField id="txtGenerales" layoutX="107.0" layoutY="77.0" prefHeight="26.0" prefWidth="124.0" stylesheets="@Estilos/estilosTxt.css" />
-            <Label layoutX="16.0" layoutY="81.0" prefHeight="18.0" prefWidth="83.0" text="EFECTIVO">
+            <TextField id="txtGenerales" fx:id="txtNIT" layoutX="93.0" layoutY="9.0" prefHeight="30.0" prefWidth="154.0" stylesheets="@Estilos/estilosTxt.css" />
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="18.0" prefWidth="70.0" text="NIT">
                <font>
                   <Font name="Arial Bold" size="15.0" />
                </font>
             </Label>
-            <Button id="botones-generales" layoutX="156.0" layoutY="125.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="88.0" stylesheets="@Estilos/estilosBotones.css" text="VENDER" />
+            <Button id="botones-generales" layoutX="149.0" layoutY="262.0" mnemonicParsing="false" onAction="#verificarUsuarioVenta" prefHeight="34.0" prefWidth="88.0" stylesheets="@Estilos/estilosBotones.css" text="VENDER" />
+            <TextField id="txtGenerales" fx:id="txtEmailVenta" layoutX="93.0" layoutY="79.0" prefHeight="30.0" prefWidth="154.0" stylesheets="@Estilos/estilosTxt.css" />
+            <Label layoutX="10.0" layoutY="84.0" prefHeight="18.0" prefWidth="70.0" text="EMAIL">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField id="txtGenerales" fx:id="txtTelefonoVenta" layoutX="94.0" layoutY="113.0" prefHeight="29.0" prefWidth="153.0" stylesheets="@Estilos/estilosTxt.css" />
+            <Label layoutX="10.0" layoutY="118.0" prefHeight="18.0" prefWidth="83.0" text="TELEFONO">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField id="txtGenerales" fx:id="txtPagoTarjeta" layoutX="92.0" layoutY="172.0" prefHeight="30.0" prefWidth="52.0" promptText="0" stylesheets="@Estilos/estilosTxt.css" />
+            <Label layoutX="11.0" layoutY="177.0" prefHeight="18.0" prefWidth="83.0" text="TARJETA">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField id="txtGenerales" fx:id="txtPagoEfectivo" layoutX="91.0" layoutY="209.0" prefHeight="30.0" prefWidth="52.0" promptText="0" stylesheets="@Estilos/estilosTxt.css" />
+            <Label layoutX="10.0" layoutY="214.0" prefHeight="18.0" prefWidth="83.0" text="EFECTIVO">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button id="botones-generales" layoutX="19.0" layoutY="262.0" mnemonicParsing="false" onAction="#insertarDatosDeCliente" prefHeight="34.0" prefWidth="104.0" stylesheets="@Estilos/estilosBotones.css" text="BUSCAR NIT" />
+            <Button id="botones-generales" layoutX="19.0" layoutY="306.0" mnemonicParsing="false" onAction="#limpiarDatos" prefHeight="34.0" prefWidth="104.0" stylesheets="@Estilos/estilosBotones.css" text="LIMPIAR" />
          </children></AnchorPane>
    </children>
 </AnchorPane>

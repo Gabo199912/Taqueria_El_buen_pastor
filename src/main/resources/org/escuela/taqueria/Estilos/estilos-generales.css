@@ -35,6 +35,11 @@
 }
 
 
+#label-total{
+    -fx-font-size: 18px;
+}
+
+
 /* Estilo para DatePicker */
 .date-picker {
     -fx-background-color: #f4f4f4;  /* Fondo gris claro */

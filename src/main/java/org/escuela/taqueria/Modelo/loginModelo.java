@@ -6,11 +6,11 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.escuela.taqueria.Controlador.administradorControlador;
-import org.escuela.taqueria.Controlador.vendedorControlador;
+import org.escuela.taqueria.Controlador.ventaControlador;
 import org.escuela.taqueria.InicioAplicacion;
 import org.escuela.taqueria.JDBCUtil;
+import org.escuela.taqueria.usuarioSesion;
 
-import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -56,7 +56,8 @@ public class loginModelo {
 
 
 
-    public loginModelo(String nombreUsuario, String contrasenia, String tipoUsuario){
+    public loginModelo(int idUsuario, String nombreUsuario, String contrasenia, String tipoUsuario){
+        this.idUsuario = idUsuario;
         this.nombreUsuario = nombreUsuario;
         this.contrasenia = contrasenia;
         this.tipoUsuario = tipoUsuario;
@@ -65,7 +66,7 @@ public class loginModelo {
 
 
     public static List<loginModelo> ListarUsuarios(){
-        String sql = "SELECT nombre_usuario, contrasenia, tipo_usuario FROM USUARIO;";
+        String sql = "SELECT id_usuario, nombre_usuario, contrasenia, tipo_usuario FROM USUARIO;";
         List<loginModelo> listaUsuarios = new ArrayList<>();
 
         try (Connection con = JDBCUtil.getConnection();
@@ -73,6 +74,7 @@ public class loginModelo {
              ResultSet rs = ps.executeQuery()){
                 while (rs.next()){
                     listaUsuarios.add(new loginModelo(
+                            rs.getInt("id_usuario"),
                             rs.getString("nombre_usuario"),
                             rs.getString("contrasenia"),
                             rs.getString("tipo_usuario")));
@@ -104,14 +106,16 @@ public class loginModelo {
             AnchorPane root = fxmlLoader.load();
 
 
-        //lñaskdjlñkasdj
             // Verificar el tipo de controlador antes de hacer el cast
             if (archivoFXML.equals("administrador.fxml")) {
                 administradorControlador controlador = fxmlLoader.getController();
                 controlador.setUsuario(usuario);
             } else if (archivoFXML.equals("vendedor.fxml")) {
-                vendedorControlador vendedor = fxmlLoader.getController();
+                ventaControlador vendedor = fxmlLoader.getController();
+                usuarioSesion.setUsuario(usuario);
+
                 vendedor.setUsuario(usuario);
+
             } else {
                 throw new IllegalArgumentException("No se encontró un controlador para el archivo FXML: " + archivoFXML);
             }

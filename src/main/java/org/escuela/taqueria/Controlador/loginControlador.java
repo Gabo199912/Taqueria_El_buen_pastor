@@ -11,6 +11,7 @@ import javafx.stage.PopupWindow;
 import javafx.stage.Stage;
 import org.escuela.taqueria.InicioAplicacion;
 import org.escuela.taqueria.Modelo.loginModelo;
+import org.escuela.taqueria.usuarioSesion;
 
 import javax.swing.*;
 import java.awt.*;
@@ -69,6 +70,8 @@ public class loginControlador {
             if (usuario.getNombreUsuario().equals(nombreUsuario)){
                 if (usuario.getContrasenia().equals(contrasenia)){
                     loginModelo.seleccionarVentana(usuario);
+
+
                     JOptionPane.showMessageDialog(null, "Bienvenido " + usuario.getNombreUsuario());
 
 
